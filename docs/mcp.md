@@ -1,4 +1,4 @@
-# SwitchSignal MCP Specification
+# SwitchSignal Hosted MCP Specification
 
 Production endpoint:
 
@@ -21,7 +21,7 @@ Authorization: Bearer <SWITCHSIGNAL_MCP_KEY>
 ## Contract
 
 SwitchSignal exposes tools, resources, and prompts for evidence-grounded market
-dislocation work. Hosted calls enforce:
+dislocation work against a hosted SwitchSignal workspace. Hosted calls enforce:
 
 - user-scoped API keys
 - documented scopes only
@@ -47,3 +47,13 @@ Use write calls only after confirming user intent and usage budget.
 Bounded write tools can create user-owned watchlists, snapshots, signals, or
 campaign packs. They do not send cold outreach, cold DMs, automated social
 posts, or destructive production actions.
+
+## Not the OSS local kit
+
+This MCP connector is not the no-account open-source product core. It requires
+a hosted SwitchSignal account and MCP API key because it reads or writes hosted
+workspace data. For local-first analysis without hosted service access, use:
+
+```text
+https://github.com/cliwant/switchsignal-oss
+```

@@ -1,19 +1,28 @@
 # SwitchSignal MCP
 
-Public MCP bridge and specification for
+Hosted-service MCP bridge and public specification for
 [SwitchSignal](https://switchsignal.grindworks.ai), the evidence-grounded
 market dislocation desk for B2B SaaS growth teams.
 
 SwitchSignal detects competitor pricing, packaging, free-tier, and policy
 changes, then turns them into bounded migration campaign work. This public repo
-contains the safe integration layer for external agents. It does not contain
+contains the safe integration layer for external agents that need to call the
+paid hosted service. It does not contain
 hosted product code, customer data, private snapshots, billing state,
 production credentials, or operator workflows.
+
+If you want the open-source local kit that runs without a SwitchSignal account
+or payment, use [cliwant/switchsignal-oss](https://github.com/cliwant/switchsignal-oss)
+instead. The OSS kit runs locally with deterministic generation, OpenRouter,
+Ollama, LM Studio, or any OpenAI-compatible provider. This MCP repo is for
+connecting agents to the hosted service.
 
 ## What you can do
 
 - Connect Claude, Codex, Gemini-style local clients, or custom MCP clients to
   the hosted SwitchSignal MCP endpoint.
+- Reuse hosted SwitchSignal account data, watchlists, snapshots, campaign
+  packs, and client reports through the service permission model.
 - Inspect the public MCP manifest, tools, resources, prompts, scopes, usage
   metering, and audit contract.
 - Run a local stdio bridge without storing secrets in this repository.
@@ -102,6 +111,19 @@ and usage budget.
 Every hosted call remains user-scoped, entitlement-checked, metered,
 rate-limited, and audit-logged by SwitchSignal. This bridge does not bypass the
 hosted security model.
+
+## OSS versus hosted MCP
+
+| Need | Use |
+| --- | --- |
+| Try SwitchSignal-style evidence audits locally with no hosted account | [cliwant/switchsignal-oss](https://github.com/cliwant/switchsignal-oss) |
+| Run deterministic campaign-pack generation locally | [cliwant/switchsignal-oss](https://github.com/cliwant/switchsignal-oss) |
+| Connect Claude/Codex/Gemini to your hosted SwitchSignal workspace | This repo |
+| Use hosted watchlists, snapshots, subscription entitlements, and audit logs | This repo |
+
+Do not put hosted MCP API keys into the OSS local kit. Do not put local-only
+workspace data into hosted MCP requests unless you intend to send it to the
+SwitchSignal service.
 
 ## Examples
 

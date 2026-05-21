@@ -4,7 +4,8 @@
   "documentation": {
     "website": "https://switchsignal.grindworks.ai/developers",
     "manifest": "https://switchsignal.grindworks.ai/mcp.json",
-    "publicRepository": "https://github.com/cliwant/switchsignal-mcp"
+    "publicRepository": "https://github.com/cliwant/switchsignal-mcp",
+    "localOpenSourceKit": "https://github.com/cliwant/switchsignal-oss"
   },
   "transport": {
     "type": "streamable-http",

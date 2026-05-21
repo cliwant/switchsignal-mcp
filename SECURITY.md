@@ -6,3 +6,7 @@ reproduction material that could expose another user's data.
 
 This repository should never contain production credentials or customer data.
 If you find a committed secret, revoke it immediately before opening a report.
+
+This repository is the hosted MCP connector. Local-first OSS issues that do not
+involve hosted credentials or hosted workspace access belong in
+`cliwant/switchsignal-oss`.

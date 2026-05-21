@@ -1,6 +1,7 @@
 # Security Boundary
 
-This public repository is intentionally narrow.
+This public repository is intentionally narrow. It is the hosted-service MCP
+connector, not the local-first OSS product core.
 
 ## Public
 
@@ -9,6 +10,14 @@ This public repository is intentionally narrow.
 - JSON-RPC examples
 - Setup documentation
 - Security boundary documentation
+
+## Not public here
+
+- The local-first OSS implementation lives at `https://github.com/cliwant/switchsignal-oss`.
+- This repo should not contain local OSS category datasets unless they are
+  needed for MCP examples.
+- This repo should not contain hosted service business logic; hosted security
+  checks remain server-side.
 
 ## Hosted and private
 
