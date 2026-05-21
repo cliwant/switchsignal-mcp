@@ -1,0 +1,60 @@
+{
+  "description": "Copyable SwitchSignal MCP JSON-RPC request examples. Send these to /api/mcp with Authorization: Bearer <SWITCHSIGNAL_MCP_KEY>.",
+  "endpoint": "https://switchsignal.grindworks.ai/api/mcp",
+  "requests": [
+    {
+      "name": "list_allowed_tools",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      }
+    },
+    {
+      "name": "audit_categories",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/call",
+        "params": {
+          "name": "switchsignal.audit_categories",
+          "arguments": {}
+        }
+      }
+    },
+    {
+      "name": "capture_plan",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "method": "tools/call",
+        "params": {
+          "name": "switchsignal.capture_plan",
+          "arguments": {
+            "categoryId": "forms-survey-free-response-caps",
+            "priority": "high_or_medium",
+            "limit": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "tool_contracts",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 4,
+        "method": "resources/read",
+        "params": {
+          "uri": "switchsignal://tool-contracts"
+        }
+      }
+    }
+  ],
+  "safety": [
+    "Never commit a real MCP key.",
+    "Start with read-only keys for discovery.",
+    "Use write scopes only after confirming user approval and usage budget.",
+    "Bulk outreach, cold email, cold DM, and automated social posting are not exposed by this public bridge."
+  ]
+}

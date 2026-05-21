@@ -1,0 +1,36 @@
+{
+  "name": "@cliwant/switchsignal-mcp",
+  "version": "0.1.0",
+  "description": "Local stdio MCP bridge and public specification for SwitchSignal.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "switchsignal-mcp": "./bin/switchsignal-mcp-bridge.mjs"
+  },
+  "files": [
+    "bin",
+    "docs",
+    "examples",
+    "mcp.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "smoke": "node examples/smoke-local.mjs",
+    "check:json": "node -e \"JSON.parse(require('fs').readFileSync('mcp.json','utf8')); JSON.parse(require('fs').readFileSync('examples/tool-calls.json','utf8')); console.log('json ok')\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cliwant/switchsignal-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "switchsignal",
+    "competitive-intelligence",
+    "gtm"
+  ]
+}

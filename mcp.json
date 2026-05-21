@@ -1,0 +1,54 @@
+{
+  "name": "SwitchSignal MCP",
+  "description": "Evidence-grounded market dislocation intelligence for B2B SaaS migration campaigns.",
+  "documentation": {
+    "website": "https://switchsignal.grindworks.ai/developers",
+    "manifest": "https://switchsignal.grindworks.ai/mcp.json",
+    "publicRepository": "https://github.com/cliwant/switchsignal-mcp"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://switchsignal.grindworks.ai/api/mcp"
+  },
+  "auth": {
+    "type": "bearer",
+    "description": "Use a SwitchSignal MCP API key. Tool calls are user-scoped, entitlement-checked, metered, rate-limited, and audit-logged."
+  },
+  "policy": {
+    "version": "2026-05-21.mcp-policy-v1",
+    "scopes": [
+      "intelligence:read",
+      "signals:write",
+      "campaign-packs:write"
+    ],
+    "metering": "analytics_events records mcp_tool_*, mcp_resource_*, and mcp_prompt_* started/completed/failed/rejected events with redacted arguments.",
+    "toolContracts": "switchsignal://tool-contracts"
+  },
+  "tools": [
+    "switchsignal.search",
+    "switchsignal.fetch",
+    "switchsignal.audit_categories",
+    "switchsignal.evidence_backlog",
+    "switchsignal.capture_plan",
+    "switchsignal.materialize_capture_plan_watchlist",
+    "switchsignal.client_report",
+    "switchsignal.capture_snapshot",
+    "switchsignal.create_signal_from_snapshot",
+    "switchsignal.create_signal_from_category",
+    "switchsignal.generate_campaign_pack"
+  ],
+  "resources": [
+    "switchsignal://categories",
+    "switchsignal://category-audit",
+    "switchsignal://evidence-backlog",
+    "switchsignal://capture-plan",
+    "switchsignal://tool-contracts",
+    "switchsignal://open-source-boundary",
+    "switchsignal://category/<categoryId>"
+  ],
+  "prompts": [
+    "switchsignal.claim_boundary_review",
+    "switchsignal.client_memo_brief",
+    "switchsignal.capture_plan_to_worklist"
+  ]
+}
