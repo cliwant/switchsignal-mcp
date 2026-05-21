@@ -2,7 +2,24 @@ import fs from "node:fs";
 import { spawn } from "node:child_process";
 
 JSON.parse(fs.readFileSync("mcp.json", "utf8"));
-JSON.parse(fs.readFileSync("examples/tool-calls.json", "utf8"));
+const examples = JSON.parse(fs.readFileSync("examples/tool-calls.json", "utf8"));
+const toolContractsDoc = fs.readFileSync("docs/tool-contracts.md", "utf8");
+
+if (!toolContractsDoc.includes("Use this when")) {
+  throw new Error("Tool contract docs must explain hosted selection guidance.");
+}
+if (!toolContractsDoc.includes("requiredOutputKeys")) {
+  throw new Error("Tool contract docs must explain required output keys.");
+}
+if (
+  !examples.requests.some(
+    (request) =>
+      request.name === "tool_contracts" &&
+      request.request?.method === "resources/read"
+  )
+) {
+  throw new Error("Examples must include switchsignal://tool-contracts.");
+}
 
 const child = spawn(process.execPath, ["bin/switchsignal-mcp-bridge.mjs"], {
   stdio: ["pipe", "pipe", "pipe"],

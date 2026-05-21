@@ -25,6 +25,9 @@ connecting agents to the hosted service.
   packs, and client reports through the service permission model.
 - Inspect the public MCP manifest, tools, resources, prompts, scopes, usage
   metering, and audit contract.
+- Inspect hosted tool contracts so external agents can choose tools by
+  selection guidance, read/write annotations, entitlement, usage unit, and
+  required output keys before executing a workflow.
 - Run a local stdio bridge without storing secrets in this repository.
 - Copy JSON-RPC request examples for read and bounded-write flows.
 
@@ -137,6 +140,9 @@ SwitchSignal service.
   JSON-RPC request shapes with no real keys, including read-only discovery,
   client report packaging, category-backed signal creation, and campaign-pack
   generation.
+- [`docs/tool-contracts.md`](docs/tool-contracts.md) explains how agents should
+  read `switchsignal://tool-contracts`, compare `readOnlyHint`, inspect
+  `requiredOutputKeys`, and avoid vague wrapper-tool behavior.
 - [`examples/smoke-local.mjs`](examples/smoke-local.mjs) validates that the
   bridge starts and that public JSON files parse.
 
