@@ -42,6 +42,15 @@ Start with these read-only calls:
 
 Use write calls only after confirming user intent and usage budget.
 
+## Tool-selection contract
+
+External agents should not infer write safety from tool names alone. Read
+`switchsignal://tool-contracts` and inspect the tool contract before executing a
+workflow. Each tool is expected to expose selection guidance, input schema,
+output schema, auth requirement, entitlement, usage unit, required scopes,
+read-only boundary, error modes, and required output keys. See
+[`tool-contracts.md`](tool-contracts.md) for the contract checklist.
+
 ## Client-delivery output contract
 
 Hosted MCP is meant for agent workflows that need client-ready work, not just

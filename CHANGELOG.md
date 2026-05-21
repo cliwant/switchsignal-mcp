@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Added hosted tool-contract documentation so external agents know how to read
+  `switchsignal://tool-contracts`, inspect read/write annotations,
+  entitlement, usage unit, error modes, and `requiredOutputKeys` before calling
+  write tools.
+
 ## 0.1.0
 
 - Initial public SwitchSignal MCP bridge.
