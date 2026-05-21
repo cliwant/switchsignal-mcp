@@ -49,6 +49,64 @@
           "uri": "switchsignal://tool-contracts"
         }
       }
+    },
+    {
+      "name": "client_report",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 5,
+        "method": "tools/call",
+        "params": {
+          "name": "switchsignal.client_report",
+          "arguments": {
+            "clientId": "<owned-client-id>"
+          }
+        }
+      },
+      "requires": {
+        "scope": "intelligence:read",
+        "entitlement": "mcp.read_call",
+        "notes": "Returns a user-scoped client report with readiness score, source boundary, top signal quality, campaign-pack value brief, and outcome feedback path."
+      }
+    },
+    {
+      "name": "create_signal_from_category",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 6,
+        "method": "tools/call",
+        "params": {
+          "name": "switchsignal.create_signal_from_category",
+          "arguments": {
+            "categoryId": "email-marketing-free-tier",
+            "competitorName": "MailerLite"
+          }
+        }
+      },
+      "requires": {
+        "scope": "signals:write",
+        "entitlement": "mcp.signal_write",
+        "notes": "Creates a bounded signal only inside the authenticated user's workspace and returns quality/scoring metadata."
+      }
+    },
+    {
+      "name": "generate_campaign_pack",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 7,
+        "method": "tools/call",
+        "params": {
+          "name": "switchsignal.generate_campaign_pack",
+          "arguments": {
+            "signalId": "<owned-signal-id>"
+          }
+        }
+      },
+      "requires": {
+        "scope": "campaign-packs:write",
+        "entitlement": "mcp.campaign_pack_write",
+        "notes": "Returns the hosted campaign pack valueBrief with evidence, source boundary, proof table, client decision, execution checklist, quality score, and cannot-claim guardrails."
+      }
     }
   ],
   "safety": [

@@ -112,6 +112,12 @@ Every hosted call remains user-scoped, entitlement-checked, metered,
 rate-limited, and audit-logged by SwitchSignal. This bridge does not bypass the
 hosted security model.
 
+Campaign-pack and client-report tools are expected to return client-delivery
+work, not generic summaries. Look for evidence, source boundary, before/after,
+affected segment, business impact, proof table, client delivery decision,
+execution checklist, quality score, cannot-claim guardrails, and outcome
+feedback path in the hosted response.
+
 ## OSS versus hosted MCP
 
 | Need | Use |
@@ -128,7 +134,9 @@ SwitchSignal service.
 ## Examples
 
 - [`examples/tool-calls.json`](examples/tool-calls.json) contains copyable
-  JSON-RPC request shapes with no real keys.
+  JSON-RPC request shapes with no real keys, including read-only discovery,
+  client report packaging, category-backed signal creation, and campaign-pack
+  generation.
 - [`examples/smoke-local.mjs`](examples/smoke-local.mjs) validates that the
   bridge starts and that public JSON files parse.
 
