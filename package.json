@@ -1,7 +1,7 @@
 {
   "name": "@cliwant/switchsignal-mcp",
   "version": "0.1.0",
-  "description": "Local stdio MCP bridge and public specification for SwitchSignal.",
+  "description": "Hosted-service MCP bridge and public specification for SwitchSignal.",
   "license": "MIT",
   "type": "module",
   "bin": {
